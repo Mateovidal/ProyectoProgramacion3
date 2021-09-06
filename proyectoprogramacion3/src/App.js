@@ -6,6 +6,7 @@ import Footer from './components/Footer'
  function App () {
 
 
+
 return (
 
 // en el contenido principal incluyo el header
