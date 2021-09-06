@@ -1,0 +1,32 @@
+body {background-color: #F5F5F5;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    max-width: 70vw;
+    display: flex;
+    background-color: #151b1f;
+    padding: 20px;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 180px 0;
+}
+
+.nav-item {
+    color: #A7A397;
+    text-decoration: none;
+    padding: 0 25px;
+    font-weight: 600;
+}
+
+.nav-item:hover {
+    color: #00F9B8;
+    transition: 0,5s;
+}
