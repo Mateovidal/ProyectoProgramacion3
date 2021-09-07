@@ -5,7 +5,7 @@ function Header() {
     return (
 
     <header>
-        <h1>Chumlify</h1>
+        {/* <h1>Chumlify</h1>
         <section>
             <p>Ordenar ASC/ DESC</p>
             <i className="fas fa-th"></i>
@@ -14,7 +14,7 @@ function Header() {
                 <input type="text" name="search" id="" placeholder="Search"/>
                 <button type="submit"><i className="fas fa-search"></i></button>
             </form>
-        </section>
+        </section> */}
     </header>
     )
 

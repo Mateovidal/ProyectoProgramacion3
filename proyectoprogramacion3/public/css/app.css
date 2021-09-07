@@ -6,6 +6,7 @@ body {background-color: #F5F5F5;
     flex-direction: column;
     overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-wrap: wrap;
 }
 
 nav {
@@ -16,7 +17,8 @@ nav {
     border-radius: 15px;
     justify-content: center;
     align-items: center;
-    margin: 180px 0;
+    margin: 0 0;
+    
 }
 
 .nav-item {
@@ -27,6 +29,75 @@ nav {
 }
 
 .nav-item:hover {
-    color: #00F9B8;
+    color: #f9e000;
     transition: 0,5s;
+}
+
+.scene{
+   width: 200px;
+   min-width: 150px;
+   height: 350px;
+   margin: 22px;
+   perspective:  600px;
+}
+
+.items{
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve 3d;
+    width: 100%;
+    height: 100%;
+    border-radius: 35px;
+
+}
+
+.item{
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-shadow: 2px 2px #e02577;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.items:hover{
+    transform: rotateY(180deg);
+}
+
+.items-1{
+    background-image: linear-gradient(
+        to top,
+        #051937
+        
+    );
+}
+.items-2{
+    transform-origin: center right;
+}
+
+.items-2:hover {
+    transform: rotateX(-100%) rotateY(-180deg);
+}
+
+.items-3{
+    transform-origin: center left;
+}
+
+.items-3:hover {
+    transform: rotateX(100%) rotateY(-180deg);
+}
+
+.items-4:hover {
+    transform: rotateX(-180deg);
+}
+
+.items-5:hover {
+    transform: rotateX(180deg);
 }
