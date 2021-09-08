@@ -15,6 +15,7 @@ return (
          <nav><Navbar/></nav>
        <Header /> 
        <main><Cards/></main>
+       
        <Footer/>
 
     </div>
