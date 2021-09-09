@@ -8,9 +8,12 @@ class Main extends Component {
         this.state = {
             nextUrl : "",
         }}
+
+
 componentDidMount(){
     console.log("componentDidMount");
 }        
+
 agregarCards(){
             let url = this.state.nextUrl;
     
@@ -19,7 +22,7 @@ agregarCards(){
                 .then((data) => {
                     console.log(data);
                     this.setState({
-                        personajes: this.state.personajes.concat(data.results),
+                        // personajes: this.state.personajes.concat(data.results),
                         nextUrl: data.info.next,  //Para tener la página siguiente.
                     })
                 })
@@ -27,12 +30,15 @@ agregarCards(){
                     console.log(e);
                 })
         }
+
+        // pasarle desde app propiedades a main
+        // 
     
 render(){
     return (
 
     <main>
-          <button onClick={()=>this.agregarCards()} className="agregarCards"> Add Cards</button>
+        <button onClick={()=>this.agregarCards()} className="agregarCards"> Add Cards</button>
         <section className='card-container'>
 
             <Album />
