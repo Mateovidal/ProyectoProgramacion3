@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from './Cards/Cards'
+import Album from './Album/Album'
 
 function Main() {
 
@@ -7,10 +7,8 @@ function Main() {
 
     <main>
         <section className='card-container'>
-        <Cards />
-        <Cards />
-        <Cards />
 
+            <Album />
 
         </section>
 

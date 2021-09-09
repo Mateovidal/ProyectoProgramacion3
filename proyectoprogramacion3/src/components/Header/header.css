@@ -1,0 +1,32 @@
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbarTitle{
+    max-width: 50%;
+    margin-right: 50%;
+}
+
+.navbarSection{
+    max-width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbarItem1{
+    width: 50%;
+}
+
+.navbarItem2{
+    width: 10%;
+    height: 100%;
+}
+
+.navbarForm{
+    max-width: 20%;
+}
+
+.lupita {
+    width: 10%;
+}
