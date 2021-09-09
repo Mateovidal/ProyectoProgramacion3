@@ -3,6 +3,7 @@ import './card.css'
 
 function Card(props){
     console.log(props);
+    const {cover, title,} = props.datosAlbum
 
     return(
         <>
@@ -15,8 +16,8 @@ function Card(props){
                     <i className="item3"></i>
                 </section>
                 <main>
-                    <img src="./img/image-default.png" alt=""></img>
-                    <h3>{props.datosAlbum.title}</h3>
+                    <img className='img' src="./img/image-default.png" alt=""></img>
+                    <h3>{title}</h3>
                     <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
                     <section className="aditional-info">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
