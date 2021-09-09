@@ -17,7 +17,8 @@ class Album extends Component {
         .then((data) => {
             console.log(data);
             this.setState({
-                albums : data.data
+                albums : data.data,
+                // nexturl: data.data.next, ver que onda eso
             })
         })
         .catch(e => console.log(e))
