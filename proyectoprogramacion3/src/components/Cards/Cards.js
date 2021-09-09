@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // importar albumes
 
-
 class Card extends Component {
     render() {
         return (
