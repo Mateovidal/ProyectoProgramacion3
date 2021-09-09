@@ -26,7 +26,7 @@ class Album extends Component {
     render() {
         return (
             <>
-
+              
                 {this.state.albums.map((album) => (
                     <Card key={album.id} datosAlbum={album} />
 

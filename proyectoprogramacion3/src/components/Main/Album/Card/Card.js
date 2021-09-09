@@ -25,6 +25,7 @@ function Card(props){
                         <p><a href={link}>Link al Album</a></p>
                     </section>
                     <a href="http://localhost:3001">Ver más</a>
+                    <button className="borrarCard">Delete</button>
                 
                 </main>
                 </article>

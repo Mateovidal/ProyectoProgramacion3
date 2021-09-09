@@ -4,6 +4,7 @@ import './header.css'
 function Header() {
 
     return (
+      
         <nav className="navbar">
             <h2 className="navbarTitle">Chumlify</h2>
         <section className='navbarSection'>
@@ -16,6 +17,8 @@ function Header() {
             </form>
         </section>
         </nav>
+        
+ 
     
     )
 
