@@ -3,7 +3,7 @@ import './card.css'
 
 function Card(props){
     console.log(props);
-    const {cover, title,cover_big,artist, record_type, link} = props.datosAlbum
+    const {cover, title,cover_big,artist, record_type, link, id} = props.datosAlbum
 
     return(
         <>
@@ -25,7 +25,7 @@ function Card(props){
                         <p><a href={link}>Link al Album</a></p>
                     </section>
                     <a href="http://localhost:3001">Ver más</a>
-                    <button className="borrarCard">Delete</button>
+                    <button className="borrarCard" onClick={() => props.borrar(id)}>Borrar</button>
                 
                 </main>
                 </article>
