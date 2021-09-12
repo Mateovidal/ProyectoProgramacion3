@@ -1,5 +1,9 @@
-.team{
+.footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.team {
     list-style-type: none;
     margin: 0;
-    
 }

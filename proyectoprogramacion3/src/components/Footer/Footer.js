@@ -5,7 +5,7 @@ function Footer() {
 
     return (
 
-        <footer>
+        <footer className='footer'>
             <ul className="team">
                 <li>Ignacio Estivil</li>
                 <li>David Zir</li>

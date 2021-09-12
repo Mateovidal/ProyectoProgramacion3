@@ -3,18 +3,19 @@ import './card.css'
 
 function Card(props){
     console.log(props);
-    const {cover, title,cover_big,artist, record_type, link, id} = props.datosAlbum
+    const {title, cover_big, artist, record_type, link, id} = props.datosAlbum
 
     return(
         <>
             <article className='card'>
+
                 <section className="navigation">
                     <div>
                         <i className="item1"></i>
                         <i className="item2"></i>
                     </div>
-                    <i className="item3"></i>
-                </section>
+                    <button className="borrarCard" onClick={() => props.borrar(id)}>Borrar</button>                </section>
+
                 <main>
                     <img className='img' src={cover_big} alt=""></img>
                     <h3>{title}</h3>
@@ -22,13 +23,13 @@ function Card(props){
                     <section className="aditional-info">
                         <p>{artist.name}</p>
                         <p>{record_type}</p>
-                        <p><a href={link}>Link al Album</a></p>
+                        <a href={link}>Link al Album</a>
+                        {/* <button>Link al album</button> */}
                     </section>
                     <a href="http://localhost:3001">Ver más</a>
-                    <button className="borrarCard" onClick={() => props.borrar(id)}>Borrar</button>
-                
                 </main>
-                </article>
+
+            </article>
         </>
     );
 
