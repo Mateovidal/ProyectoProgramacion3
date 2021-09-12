@@ -8,12 +8,16 @@ function Main() {
 
     <main>
 
+   
         {/* para llamar a un metodo como estamos hablando del propio componente usamos this. y el nombre del metodo agregarCards */}
         <button onClick={()=>this.agregarCards()} className="agregarCards"> Add Cards</button>
         <section className='card-container'>
 
             <Album />
-        </>
+
+        </section>
+
+    </main>
     )
 }
 

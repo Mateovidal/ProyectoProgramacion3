@@ -14,7 +14,9 @@ function Card(props){
                         <i className="item1"></i>
                         <i className="item2"></i>
                     </div>
-                    <button className="borrarCard" onClick={() => props.borrar(id)}>Borrar</button>                </section>
+                    <button className="borrarCard" onClick={() => props.borrar(id)}>Borrar</button>           
+                    
+                     </section>
 
                 <main>
                     <img className='img' src={cover_big} alt=""></img>
