@@ -21,25 +21,7 @@ componentDidMount(){
 
 
 // creamos el metodo agregarCards
-agregarCards(){
 
-
-            let url = this.state.nextUrl;
-            fetch(url)
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(data);
-                    this.setState({
-
-        
-                        // personajes: this.state.personajes.concat(data.results),
-                        // nextUrl: data.info.next,  //Para tener la página siguiente.
-                    })
-                })
-                .catch( function (e){
-                    console.log(e);
-                })
-        }
 
         // pasarle desde app propiedades a main
      
@@ -50,7 +32,7 @@ render(){
     <main>
 
                          {/* para llamar a un metodo como estamos hablando del propio componente usamos this. y el nombre del metodo agregarCards */}
-        <button onClick={()=>this.agregarCards()} className="agregarCards"> Add Cards</button>
+      
         <section className='card-container'>
 
             <Album />
