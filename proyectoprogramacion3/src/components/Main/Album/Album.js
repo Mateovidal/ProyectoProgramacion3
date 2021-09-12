@@ -30,7 +30,6 @@ console.log(id);
 const resto = this.state.albums.filter( album => album.id != id)
 this.setState({
 albums: resto
-
 })
 }
 
