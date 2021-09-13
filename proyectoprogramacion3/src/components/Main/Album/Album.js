@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from './Card/Card'
+import Search from './Search/Search'
 
 
 
@@ -9,6 +10,7 @@ class Album extends Component {
         super();
         this.state = {
             albums: [],
+            filtrados: []
             
            
         }
@@ -25,6 +27,7 @@ class Album extends Component {
             console.log(data);
             this.setState({
                 albums: data.data,
+                filtrados: data.data,
                 // nextUrl: data.data.next, ver que onda eso
                 nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=10"
             })
@@ -76,9 +79,20 @@ class Album extends Component {
         })
     }
 
+    filtrarAlbums(textoFiltrar){
+        let albumsFiltrados = this.state.albums.filter(album => album.title.toLowerCase().includes(textoFiltrar.toLowerCase()));
+        // console.log(albumsFiltrados);
+        this.setState({
+            filtrados: albumsFiltrados
+        })
+    }
+
     render() {
         return (
             <>
+
+                <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} />
+
             
                 <section className='card-container'>
               
