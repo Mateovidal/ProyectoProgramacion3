@@ -44,7 +44,7 @@ class Card extends Component{
                         <i className="item1"></i>
                         <i className="item2"></i>
                     </div>
-                    <button className="borrarCard" onClick={() => this.props.borrar(this.props.id)}>Borrar</button>           
+                    <button className="borrarCard" onClick={() => this.props.borrar(this.props.datosAlbum.id)}>Borrar</button>           
                     
                      </section>
 
