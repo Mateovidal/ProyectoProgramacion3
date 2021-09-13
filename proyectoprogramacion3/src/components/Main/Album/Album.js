@@ -35,7 +35,7 @@ class Album extends Component {
 
     // creamos el metodo agregarCards
     agregarCards(){
-        let url = this.state.nextUrl;
+        let nuevaCantidad = this.state.album.length;
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
