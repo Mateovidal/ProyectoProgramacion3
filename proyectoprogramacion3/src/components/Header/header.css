@@ -1,17 +1,22 @@
 .navbar{
     display: flex;
     flex-wrap: wrap;
+    background-color: #121313;
+    color:rgb(0, 255, 0);
 }
 
 .navbarTitle{
     max-width: 50%;
     margin-right: 50%;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
 }
 
 .navbarSection{
     max-width: 30%;
     display: flex;
     flex-wrap: wrap;
+    font-family: Arial;
 }
 
 .navbarItem1{

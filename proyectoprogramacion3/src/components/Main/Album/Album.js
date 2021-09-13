@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from './Card/Card'
 import Search from './Search/Search'
+import './album.css'
 
 
 
@@ -19,7 +20,7 @@ class Album extends Component {
     
     componentDidMount(){
         console.log('componentDidMount');
-        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=10";
+        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=12";
         // &top?limit=10
         fetch(url)
         .then((respuesta) => respuesta.json())
@@ -29,7 +30,7 @@ class Album extends Component {
                 albums: data.data,
                 filtrados: data.data,
                 // nextUrl: data.data.next, ver que onda eso
-                nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=10"
+                nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=12"
             })
         })
         .catch(e => console.log(e))
@@ -44,7 +45,7 @@ class Album extends Component {
     // creamos el metodo agregarCards
     agregarCards(){
         let newIndex = this.state.albums.length 
-        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=10";
+        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=12";
         // this.setState({
         //     limit: this.state.limit + 1
         // })

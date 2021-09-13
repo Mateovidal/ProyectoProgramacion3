@@ -1,9 +1,32 @@
 .footer {
     display: flex;
     justify-content: flex-end;
+    background-color: #121313;
+    color: rgb(225, 0, 255);
+    font-family: Arial;
 }
 
 .team {
+    display: flex;
+    flex-wrap: nowrap;
     list-style-type: none;
     margin: 0;
+}
+
+.nacho{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: flex;
+}
+
+.david{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: flex;
+}
+
+.mateo{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: flex;
 }

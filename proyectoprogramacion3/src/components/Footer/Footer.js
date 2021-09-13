@@ -7,9 +7,9 @@ function Footer() {
 
         <footer className='footer'>
             <ul className="team">
-                <li>Ignacio Estivil</li>
-                <li>David Zir</li>
-                <li>Mateo Vidal</li>
+                <li className="nacho">Ignacio Estivill</li>
+                <li className="david">David Zir</li>
+                <li className="mateo">Mateo Vidal</li>
             </ul>
         </footer>
     

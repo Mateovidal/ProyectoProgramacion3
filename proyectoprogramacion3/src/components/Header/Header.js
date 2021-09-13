@@ -7,7 +7,7 @@ function Header() {
     return (
       
         <nav className="navbar">
-            <h2 className="navbarTitle">Chumlify</h2>
+            <h2 className="navbarTitle">FIJI</h2>
         <section className='navbarSection'>
             <p className="navbarItem1">Ordenar ASC/ DESC</p>
             <img src="https://img.flaticon.com/icons/png/512/81/81484.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt='' className="navbarItem2"></img>

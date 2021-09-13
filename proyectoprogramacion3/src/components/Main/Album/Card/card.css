@@ -2,13 +2,19 @@
     width: 20%;
     padding: 10px;
     margin-bottom: 20px;
-
+    border-radius: 18px;
+    background-color: #d8d8d8;
+    color: #17252A;
+    font-family: Arial;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
     
 }
 
 .img {
     width: 100%;
     height: 100%;
+    border-radius: 7.5%;
 }
 
 .card-container {
@@ -28,4 +34,52 @@
 
 .show{
     display: block;
+}
+
+.more {
+    
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid #0b3f0f;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FEFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #121313;
+        
+       
+        
+}
+
+.more:hover{
+    border-color: #0feb08;
+}
+
+.borrarCard {
+   
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid #6f2232;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FEFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #121313;
+        
+       
+        
+}
+
+.borrarCard:hover{
+    border-color: #e00749;
 }
