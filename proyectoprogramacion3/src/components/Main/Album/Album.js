@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import Card from './Card/Card'
 
+
+
+
 class Album extends Component {
     constructor(){
-        super()
+        super();
         this.state = {
             albums: [],
-            nextUrl: "",
-            limit: 10
+            
+           
         }
     }
 
+    
     componentDidMount(){
         console.log('componentDidMount');
         const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=10";
@@ -36,27 +40,24 @@ class Album extends Component {
 
     // creamos el metodo agregarCards
     agregarCards(){
-        let newIndex = this.state.albums.length
-        // let newLimit =
+        let newIndex = this.state.albums.length 
+        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=10";
         // this.setState({
-            // limit: this.state.limit + 1
+        //     limit: this.state.limit + 1
         // })
-        // console.log(newLimit);
-        let url = this.state.nextUrl;
-        fetch(url)
+         fetch(url)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
 
                 this.setState({
-                    // limit: this.state.limit + 1,
 
                     albums: this.state.albums.concat(data.data),
-                    nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=" + newIndex + "&limit=10"
+                   
                         // con el next le estoy diciendo que sea pag 
-// 1 , 2 3 etc. le tengoq ue explicar a mi componente que puedo estar cargando 
-// 1 2 3 4 5 paginas va a atener distintas cargas habria que redifinir el estado, ya que 
-// necesiuto algo que me diga en que condicion estoy
+                // 1 , 2 3 etc. le tengoq ue explicar a mi componente que puedo estar cargando 
+                // 1 2 3 4 5 paginas va a atener distintas cargas habria que redifinir el estado, ya que 
+                // necesiuto algo que me diga en que condicion estoy
                 })
             })
             .catch(function(e){
@@ -74,8 +75,6 @@ class Album extends Component {
             albums: resto
         })
     }
-
-
 
     render() {
         return (
