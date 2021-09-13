@@ -6,10 +6,11 @@ import Card from './Card/Card'
 
 class Album extends Component {
     constructor(){
-        super()
+        super();
         this.state = {
             albums: [],
-            nextUrl: ""
+            
+           
         }
     }
 
@@ -39,8 +40,12 @@ class Album extends Component {
 
     // creamos el metodo agregarCards
     agregarCards(){
-        let nuevaCantidad = this.state.album.length;
-        fetch(url)
+        let newIndex = this.state.albums.length 
+        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=10";
+        // this.setState({
+        //     limit: this.state.limit + 1
+        // })
+         fetch(url)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
@@ -48,7 +53,7 @@ class Album extends Component {
                 this.setState({
 
                     albums: this.state.albums.concat(data.data),
-                    nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=10"
+                   
                         // con el next le estoy diciendo que sea pag 
                 // 1 , 2 3 etc. le tengoq ue explicar a mi componente que puedo estar cargando 
                 // 1 2 3 4 5 paginas va a atener distintas cargas habria que redifinir el estado, ya que 
