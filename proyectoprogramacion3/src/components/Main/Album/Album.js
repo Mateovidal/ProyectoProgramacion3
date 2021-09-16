@@ -45,7 +45,7 @@ class Album extends Component {
     // creamos el metodo agregarCards
     agregarCards(){
         let newIndex = this.state.albums.length 
-        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=12";
+        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=10";
         // this.setState({
         //     limit: this.state.limit + 1
         // })
@@ -55,8 +55,11 @@ class Album extends Component {
                 console.log(data);
 
                 this.setState({
-
+                    // le pedimos que meta los albumes que agrega en filtrados y en albums,
+                    // para que ambas listas coincidan
                     albums: this.state.albums.concat(data.data),
+                   
+                    filtrados: this.state.albums.concat(data.data),
                    
                         // con el next le estoy diciendo que sea pag 
                 // 1 , 2 3 etc. le tengoq ue explicar a mi componente que puedo estar cargando 
@@ -70,13 +73,17 @@ class Album extends Component {
         )
     }
 
+    // le pedimos que filtre no de albums, sino de filtrados
+    //y luego mete las tarjetas que quedan (las que no fueron borradas) dentro de filtrados
+    //filtrados es lo que se renderiza
+
     borrarTarjeta (id){
         console.log(id);
 
-        const resto = this.state.albums.filter( album => album.id !== id)
+        const resto = this.state.filtrados.filter( album => album.id !== id)
         
         this.setState({
-            albums: resto
+            filtrados: resto
         })
     }
 
@@ -89,24 +96,46 @@ class Album extends Component {
     }
 
     render() {
+       
+        let contenido;
+
+        if (this.state.albums == "") {
+            contenido = <p> LOADING... </p>
+            console.log("LOADING...");
+        }
+        else  if (this.state.filtrados == "") {
+            contenido = <p> NO HAY RESULTADOS PA </p>
+            console.log("LOADING...");
+        }
+        else{
+            contenido =   <section className='card-container'>
+            {/* queremos que se mapee el filtrados para que muestre nada mas los que queremos y no todos */}
+                  {this.state.filtrados.map((album) => (
+                      <Card 
+                      key={album.id} 
+                      datosAlbum={album} 
+                      borrar = {(albumBorrar)=>this.borrarTarjeta(albumBorrar)} />
+
+                  ))}
+
+              </section>
+        };
+
+       
+       
+
+        console.log(contenido);
+
         return (
+
+            
+
             <>
 
                 <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} />
 
-            
-                <section className='card-container'>
+                {contenido}
               
-                    {this.state.albums.map((album) => (
-                        <Card 
-                        key={album.id} 
-                        datosAlbum={album} 
-                        borrar = {(albumBorrar)=>this.borrarTarjeta(albumBorrar)} />
-
-                    ))}
-
-                </section>
-
                 <button onClick={()=>this.agregarCards()} className="agregarCards"> Add Cards</button>
 
             </>

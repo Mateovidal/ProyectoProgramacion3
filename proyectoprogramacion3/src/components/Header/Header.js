@@ -1,5 +1,7 @@
 import React from 'react';
+
 import './header.css'
+
 // import Search from '../Main/Album/Search/Search';
 
 function Header() {
@@ -14,6 +16,7 @@ function Header() {
             <img src="https://img.flaticon.com/icons/png/512/81/81484.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt='' className="navbarItem2"></img>
             {/* <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} /> */}
         </section>
+      
         </nav>
         
  
