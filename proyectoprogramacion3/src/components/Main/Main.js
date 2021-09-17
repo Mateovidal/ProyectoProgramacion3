@@ -13,7 +13,7 @@ function Main() {
         
         <section className='card-container'>
 
-            <Album />
+            <Album filtrarAlbums={(param)=> this.filtrarAlbums(param)}  />
 
         </section>
 

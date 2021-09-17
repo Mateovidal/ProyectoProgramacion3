@@ -52,11 +52,14 @@ class Card extends Component{
                     <img className='img' src={this.props.datosAlbum.cover_big} alt=""></img>
                     <h3>{this.props.datosAlbum.title}</h3>
                     <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
-                    <section className="aditional-info">
-                       
-                        <p className={`hide ${this.state.viewMore ? 'show' : 'hide'}`}>{this.props.datosAlbum.artist.name}</p>
+                    <section className="aditionalInfo">
+                        <div className="infoArtistSection">
+                             <img className="imageArtist" src={this.props.datosAlbum.artist.picture_medium} alt=""></img>
+                            <p className="nameArtist">{this.props.datosAlbum.artist.name}</p>
+                        </div>
                         <p className={`hide ${this.state.viewMore ? 'show' : 'hide'}`}>{this.props.datosAlbum.record_type}</p>
-                        <a className={`hide ${this.state.viewMore ? 'show' : 'hide'}`} href={this.props.datosAlbum.link}>Link al Album</a>
+                        <a className={`hide ${this.state.viewMore ? 'show' : 'hide'}`} href={this.props.datosAlbum.artist.link}>Artist Profile</a>
+                        <a className={`hide ${this.state.viewMore ? 'show' : 'hide'}`} href={this.props.datosAlbum.link}>Album Info</a>
                         
                     </section>
                     <button className='more' onClick={()=>this.viewMore()}>{this.state.text}</button>

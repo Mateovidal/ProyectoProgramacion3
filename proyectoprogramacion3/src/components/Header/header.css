@@ -12,10 +12,10 @@
     font-size: xx-large;
 }
 
-.navbarSection{
+ .navbarSection{
     max-width: 30%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     font-family: Arial;
 }
 
@@ -25,7 +25,7 @@
 
 .navbarItem2{
     width: 10%;
-    height: 100%;
+   
 }
 
 .navbarForm{
@@ -34,4 +34,108 @@
 
 .lupita {
     width: 10%;
+} 
+
+.ascending {
+    
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid #0b173f;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FEFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #121313;
+    max-height: 40%;
+        
+       
+        
+}
+
+.ascending:hover{
+    border-color: #08ebd8;
+}
+
+.descending {
+    
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid #0b173f;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FEFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #121313;
+    margin-right: 2%;
+    margin-left: 0.5%;
+    max-height: 40%;
+        
+       
+        
+}
+
+.descending:hover{
+    border-color: #08ebd8;
+}
+
+.orden1 {
+    
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid #360b3f;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FEFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #121313;
+    margin-left: 2%;
+    max-height: 40%;
+        
+       
+        
+}
+
+.orden1:hover{
+    border-color: #9f02fa;
+}
+.orden2 {
+    
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid #360b3f;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FEFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #121313;
+    max-height: 40%;
+    margin-left: 0.5%;
+   
+        
+       
+        
+}
+
+.orden2:hover{
+    border-color: #9f02fa;
 }

@@ -100,8 +100,8 @@ class Album extends Component {
         let contenido;
 
         if (this.state.albums == "") {
-            contenido = <p> LOADING... </p>
-            console.log("LOADING...");
+            contenido = <iframe src="https://giphy.com/embed/3AMRa6DRUhMli" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                       console.log("LOADING...");
         }
         else  if (this.state.filtrados == "") {
             contenido = <p> NO HAY RESULTADOS PA </p>
@@ -133,7 +133,7 @@ class Album extends Component {
             <>
 
                 <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} />
-
+               
                 {contenido}
               
                 <button onClick={()=>this.agregarCards()} className="agregarCards"> Add Cards</button>

@@ -51,7 +51,8 @@
     text-align:center;
     transition: all 0.2s;
     background-color: #121313;
-        
+    margin-top: 2%;
+    margin-left: 36%;    
        
         
 }
@@ -82,4 +83,37 @@
 
 .borrarCard:hover{
     border-color: #e00749;
+}
+
+.imageArtist{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    max-height: 30%;
+    max-width: 30%;
+    border-radius: 50%;
+    position: relative;
+    right: -5%;
+    top: 10%
+}
+
+.nameArtist {
+    position: relative;
+    right: -40%;
+    color:#eaf1ea ;
+    display:flex;
+    flex-wrap: nowrap;
+    right: 5%;
+}
+
+
+.infoArtistSection{
+    background-color: #121313;
+    border-radius:7.5%;
+    max-width: 95%;
+    max-height: 60%;
+    position: relative;
+    right: -2.5%;
+    display: flex;
+   
 }

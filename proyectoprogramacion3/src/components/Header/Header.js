@@ -11,9 +11,12 @@ function Header() {
         <nav className="navbar">
             <h2 className="navbarTitle">FIJI</h2>
         <section className='navbarSection'>
-            <p className="navbarItem1">Ordenar ASC/ DESC</p>
-            <img src="https://img.flaticon.com/icons/png/512/81/81484.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt='' className="navbarItem2"></img>
-            <img src="https://img.flaticon.com/icons/png/512/81/81484.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt='' className="navbarItem2"></img>
+            
+            <button className="ascending">ASC</button>
+            <button className="descending">DES</button>
+
+            <button className="orden1">Orden 1</button>
+            <button className="orden2">Orden 2</button>
             {/* <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} /> */}
         </section>
       
