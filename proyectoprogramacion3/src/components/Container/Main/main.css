@@ -1,3 +1,9 @@
+.card-container{
+    margin-top: 50px;
+    justify-content: center;
+    background-color: #121313;
+}
+
 .agregarCards {
    
     padding:0.3em 1.2em;

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Card from './Card/Card'
-import Search from './Search/Search'
-import './album.css'
+import './main.css'
 
 
 
 
-class Album extends Component {
+class Main extends Component {
     constructor(){
         super();
         this.state = {
@@ -16,7 +15,6 @@ class Album extends Component {
            
         }
     }
-
     
     componentDidMount(){
         console.log('componentDidMount');
@@ -87,13 +85,7 @@ class Album extends Component {
         })
     }
 
-    filtrarAlbums(textoFiltrar){
-        let albumsFiltrados = this.state.albums.filter(album => album.title.toLowerCase().includes(textoFiltrar.toLowerCase()));
-        // console.log(albumsFiltrados);
-        this.setState({
-            filtrados: albumsFiltrados
-        })
-    }
+
 
     render() {
        
@@ -132,7 +124,7 @@ class Album extends Component {
 
             <>
 
-                <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} />
+                {/* <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} /> */}
                
                 {contenido}
               
@@ -143,4 +135,4 @@ class Album extends Component {
     }
 }
 
-export default Album;
+export default Main;
