@@ -129,7 +129,7 @@ render(){
 
             <>
 
-            <Header cambiarOrientacion={orientacion} filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
+            <Header cambiarOrientacion={()=>this.cambiarRow()} filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
             <Main agregarTarjetas={()=>this.agregarCards()} borrarTarjeta={(albumBorrar)=>this.borrarTarjeta(albumBorrar)} albumsAMostrar={this.state.filtrados}/>
 
             </>
