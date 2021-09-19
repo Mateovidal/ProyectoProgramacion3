@@ -12,7 +12,8 @@ class Header extends Component {
         this.state = {
             value: '',
             albums: [],
-            filtrados: []
+            filtrados: [],
+            vista: 'row'
         }
     }
 
@@ -61,8 +62,8 @@ class Header extends Component {
             <button className="ascending">ASC</button>
             <button className="descending">DES</button>
 
-            <button className="orden1">Orden 1</button>
-            <button className="orden2">Orden 2</button>
+            <button onClick={this.props.cambiarOrientacion} className="orden1">Row</button>
+            <button onClick={this.props.cambiarOrientacion} className="orden2">Colum</button>
             {/* <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} /> */}
         </section>
 

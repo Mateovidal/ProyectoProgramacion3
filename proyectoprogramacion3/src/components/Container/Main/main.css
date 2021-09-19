@@ -27,3 +27,27 @@
 .agregarCards:hover{
     border-color: #fffb00;
 }
+
+
+
+.row{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    flex-direction: row;
+    align-items:  flex-start; 
+
+ }; 
+
+
+ .column{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+  
+} 
