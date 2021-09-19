@@ -54,7 +54,7 @@ class Card extends Component{
                              <img className="imageArtist" src={this.props.datosAlbum.artist.picture_medium} alt=""></img>
                             <p className="nameArtist">{this.props.datosAlbum.artist.name}</p>
                         </div>
-                        <p className={`hide ${this.state.viewMore ? 'show' : 'hide'}`}>{this.props.datosAlbum.record_type}</p>
+                        <p className={`hide ${this.state.viewMore ? 'show' : 'hide'}`}>Record Type: {this.props.datosAlbum.record_type}</p>
                         <a className={`hide ${this.state.viewMore ? 'show' : 'hide'}`} href={this.props.datosAlbum.artist.link}>Artist Profile</a>
                         <a className={`hide ${this.state.viewMore ? 'show' : 'hide'}`} href={this.props.datosAlbum.link}>Album Info</a>
                         

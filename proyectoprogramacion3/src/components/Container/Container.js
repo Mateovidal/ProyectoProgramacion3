@@ -3,9 +3,6 @@ import Header from './Header/Header';
 import Main from './Main/Main';
 
 
-
-// import Search from '../Main/Album/Search/Search';
-
 class Container extends Component {
 
     constructor(){
@@ -14,7 +11,7 @@ class Container extends Component {
         this.state = {
             albums: [],
             filtrados: [],
-            vista: 'column'
+            vista: 'row'
         }
     }
 
@@ -29,9 +26,8 @@ componentDidMount(){
             this.setState({
                 albums: data.data,
                 filtrados: data.data,
-                // nextUrl: data.data.next, ver que onda eso
                 nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=12",
-                vista: 'column'
+                vista: this.state.vista
             })
         })
         .catch(e => console.log(e))
@@ -53,27 +49,17 @@ filtrarAlbums(textoFiltrar){
 
  // creamos el metodo agregarCards
  agregarCards(){
-    let newIndex = this.state.albums.length 
+    let newIndex = this.state.albums.length
     const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=10";
-    // this.setState({
-    //     limit: this.state.limit + 1
-    // })
      fetch(url)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
 
             this.setState({
-                // le pedimos que meta los albumes que agrega en filtrados y en albums,
-                // para que ambas listas coincidan
-                albums: this.state.albums.concat(data.data),
-               
+
                 filtrados: this.state.filtrados.concat(data.data),
                
-                    // con el next le estoy diciendo que sea pag 
-            // 1 , 2 3 etc. le tengoq ue explicar a mi componente que puedo estar cargando 
-            // 1 2 3 4 5 paginas va a atener distintas cargas habria que redifinir el estado, ya que 
-            // necesiuto algo que me diga en que condicion estoy
             })
         })
         .catch(function(e){
@@ -98,31 +84,29 @@ borrarTarjeta (id){
 
 
 cambiarRow(){
-    
 
         this.setState({
             vista: 'row'
         })
-
-
 }
 
 cambiarColumn() {
 
-        this.setState({
-            vista: 'column'
-        })
-    }
+    this.setState({
+        vista: 'column'
+    })
+}
 
 
 render(){
 
     console.log(this.state.vista)
+
         return (
 
             <>
 
-            <Header orientarCardsColumn={()=> this.cambiarRow()} orientarCardsRow={()=> this.cambiarRow()} filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
+            <Header orientarCardsColumn={()=> this.cambiarColumn()} orientarCardsRow={()=> this.cambiarRow()} filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
             <Main orientacionAMostrar={this.state.vista} agregarTarjetas={()=>this.agregarCards()} borrarTarjeta={(albumBorrar)=>this.borrarTarjeta(albumBorrar)} albumsAMostrar={this.state.filtrados}/>
 
             </>
