@@ -6,8 +6,8 @@ import './main.css'
 
 
 class Main extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             albums: [],
             filtrados: []
@@ -26,7 +26,7 @@ class Main extends Component {
             console.log(data);
             this.setState({
                 albums: data.data,
-                filtrados: data.data,
+                filtrados: this.props.albumsAMostrar,
                 // nextUrl: data.data.next, ver que onda eso
                 nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=12"
             })
@@ -40,50 +40,7 @@ class Main extends Component {
 
 
 
-    // creamos el metodo agregarCards
-    agregarCards(){
-        let newIndex = this.state.albums.length 
-        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=10";
-        // this.setState({
-        //     limit: this.state.limit + 1
-        // })
-         fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-
-                this.setState({
-                    // le pedimos que meta los albumes que agrega en filtrados y en albums,
-                    // para que ambas listas coincidan
-                    albums: this.state.albums.concat(data.data),
-                   
-                    filtrados: this.state.albums.concat(data.data),
-                   
-                        // con el next le estoy diciendo que sea pag 
-                // 1 , 2 3 etc. le tengoq ue explicar a mi componente que puedo estar cargando 
-                // 1 2 3 4 5 paginas va a atener distintas cargas habria que redifinir el estado, ya que 
-                // necesiuto algo que me diga en que condicion estoy
-                })
-            })
-            .catch(function(e){
-                console.log(e);
-            }
-        )
-    }
-
-    // le pedimos que filtre no de albums, sino de filtrados
-    //y luego mete las tarjetas que quedan (las que no fueron borradas) dentro de filtrados
-    //filtrados es lo que se renderiza
-
-    borrarTarjeta (id){
-        console.log(id);
-
-        const resto = this.state.filtrados.filter( album => album.id !== id)
-        
-        this.setState({
-            filtrados: resto
-        })
-    }
+   
 
 
 
@@ -91,22 +48,22 @@ class Main extends Component {
        
         let contenido;
 
-        if (this.state.albums == "") {
+        if (this.props.albumsAMostrar == "") {
             contenido = <iframe src="https://giphy.com/embed/3AMRa6DRUhMli" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
                        console.log("LOADING...");
         }
-        else  if (this.state.filtrados == "") {
+        else  if (this.props.albumsAMostrar == "") {
             contenido = <p> NO HAY RESULTADOS PA </p>
             console.log("LOADING...");
         }
         else{
             contenido =   <section className='card-container'>
             {/* queremos que se mapee el filtrados para que muestre nada mas los que queremos y no todos */}
-                  {this.state.filtrados.map((album) => (
+                  {this.props.albumsAMostrar.map((album) => (
                       <Card 
                       key={album.id} 
                       datosAlbum={album} 
-                      borrar = {(albumBorrar)=>this.borrarTarjeta(albumBorrar)} />
+                      borrar = {this.props.borrarTarjeta} />
 
                   ))}
 
@@ -128,7 +85,7 @@ class Main extends Component {
                
                 {contenido}
               
-                <button onClick={()=>this.agregarCards()} className="agregarCards"> Add Cards</button>
+                <button onClick={this.props.agregarTarjetas} className="agregarCards"> Add Cards</button>
 
             </>
         )

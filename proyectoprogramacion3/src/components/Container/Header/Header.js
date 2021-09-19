@@ -41,6 +41,7 @@ class Header extends Component {
 
     controlCambios(e){
         this.setState({
+            
             value: e.target.value
         }, ()=>this.props.filtrarAlbums(this.state.value))
         // console.log(e.target.value);
