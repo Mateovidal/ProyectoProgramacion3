@@ -12,9 +12,6 @@ class Card extends Component{
         }
     };
     
-    
-   
-    // const {title, cover_big, artist, record_type, link, id} = props.datosAlbum
 
     viewMore(){
         if(this.state.viewMore){
