@@ -10,7 +10,8 @@ class Main extends Component {
         super(props);
         this.state = {
             albums: [],
-            filtrados: []
+            filtrados: [],
+            orientacion: ''
             
            
         }
@@ -27,6 +28,7 @@ class Main extends Component {
             this.setState({
                 albums: data.data,
                 filtrados: this.props.albumsAMostrar,
+                orientacion: this.props.orientacionAMostrar,
                 // nextUrl: data.data.next, ver que onda eso
                 nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=12"
             })
@@ -57,7 +59,7 @@ class Main extends Component {
             console.log("LOADING...");
         }
         else{
-            contenido =   <section className='card-container'>
+            contenido =   <section className={this.props.orientacionAMostrar}>
             {/* queremos que se mapee el filtrados para que muestre nada mas los que queremos y no todos */}
                   {this.props.albumsAMostrar.map((album) => (
                       <Card 

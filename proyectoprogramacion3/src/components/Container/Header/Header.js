@@ -62,8 +62,8 @@ class Header extends Component {
             <button className="ascending">ASC</button>
             <button className="descending">DES</button>
 
-            <button onClick={this.props.cambiarOrientacion} className="orden1">Row</button>
-            <button onClick={this.props.cambiarOrientacion} className="orden2">Colum</button>
+            <button onClick={this.props.orientarCardsRow} className="orden1">Row</button>
+            <button onClick={this.props.orientarCardsColumn} className="orden2">Colum</button>
             {/* <Search filtrarAlbums={(param)=> this.filtrarAlbums(param)} /> */}
         </section>
 
