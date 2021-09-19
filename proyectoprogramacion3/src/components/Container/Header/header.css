@@ -1,22 +1,27 @@
-.navbar{
+.navbar {
     display: flex;
     flex-wrap: wrap;
     background-color: #121313;
     color:rgb(0, 255, 0);
+    border:0.16em solid #0b173f;
+    border-radius:2em;
 }
 
-.navbarTitle{
-    max-width: 50%;
-    margin-right: 50%;
+.navbarTitle {
+
+    margin-right: 45%;
+    margin-left: 5%;
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     font-size: xx-large;
 }
 
- .navbarSection{
-    max-width: 30%;
+ .navbarSection{ 
+
     display: flex;
     flex-wrap: nowrap;
     font-family: Arial;
+    height: 50%;
+    margin-top: 3%
 }
 
 .navbarItem1{
@@ -28,13 +33,25 @@
    
 }
 
-.navbarForm{
-    max-width: 20%;
+/* .navbarForm{
+    width: 10%;
+} */
+
+.search {
+    width: 10%;
+    margin-top: 3%;
+    margin-left: 5%;
+
 }
 
+/* .searchTerm {
+    border-radius: 30%;
+
+} */
+/* 
 .lupita {
     width: 10%;
-} 
+}  */
 
 .ascending {
     
@@ -105,14 +122,13 @@
     background-color: #121313;
     margin-left: 2%;
     max-height: 40%;
-        
-       
-        
+          
 }
 
 .orden1:hover{
     border-color: #9f02fa;
 }
+
 .orden2 {
     
     padding:0.3em 1.2em;
@@ -130,9 +146,6 @@
     background-color: #121313;
     max-height: 40%;
     margin-left: 0.5%;
-   
-        
-       
         
 }
 

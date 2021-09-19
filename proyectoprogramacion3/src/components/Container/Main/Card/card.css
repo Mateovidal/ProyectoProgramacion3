@@ -34,6 +34,8 @@
 
 .show{
     display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5%;
 }
 
 .more {
@@ -77,8 +79,6 @@
     transition: all 0.2s;
     background-color: #121313;
         
-       
-        
 }
 
 .borrarCard:hover{
@@ -99,17 +99,17 @@
 
 .nameArtist {
     position: relative;
-    right: -40%;
+    right: -10%;
     color:#eaf1ea ;
     display:flex;
     flex-wrap: nowrap;
-    right: 5%;
 }
 
 
 .infoArtistSection{
-    background-color: #121313;
-    border-radius:7.5%;
+    background-color: #4E4E4E;
+    border:0.16em solid #0b173f;
+    border-radius:2em;
     max-width: 95%;
     max-height: 60%;
     position: relative;
