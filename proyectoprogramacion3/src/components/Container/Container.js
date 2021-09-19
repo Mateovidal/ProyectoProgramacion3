@@ -14,7 +14,7 @@ class Container extends Component {
         this.state = {
             albums: [],
             filtrados: [],
-            vista: 'row'
+            vista: 'column'
         }
     }
 
@@ -31,7 +31,7 @@ componentDidMount(){
                 filtrados: data.data,
                 // nextUrl: data.data.next, ver que onda eso
                 nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=12",
-                vista: 'row'
+                vista: 'column'
             })
         })
         .catch(e => console.log(e))
@@ -98,7 +98,7 @@ borrarTarjeta (id){
 
 
 cambiarRow(){
-    console.log(this.state.vista)
+    
 
         this.setState({
             vista: 'row'
@@ -106,6 +106,7 @@ cambiarRow(){
 
 
 }
+
 cambiarColumn() {
 
         this.setState({
@@ -116,21 +117,13 @@ cambiarColumn() {
 
 render(){
 
-    let orientacion;
-
-    if(this.state.vista == 'row'){
-        orientacion = ()=>this.cambiarRow()
-    }
-    else {
-        orientacion = ()=>this.cambiarColumn()
-    }
-
+    console.log(this.state.vista)
         return (
 
             <>
 
-            <Header cambiarOrientacion={orientacion} filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
-            <Main agregarTarjetas={()=>this.agregarCards()} borrarTarjeta={(albumBorrar)=>this.borrarTarjeta(albumBorrar)} albumsAMostrar={this.state.filtrados}/>
+            <Header orientarCardsColumn={()=> this.cambiarRow()} orientarCardsRow={()=> this.cambiarRow()} filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
+            <Main orientacionAMostrar={this.state.vista} agregarTarjetas={()=>this.agregarCards()} borrarTarjeta={(albumBorrar)=>this.borrarTarjeta(albumBorrar)} albumsAMostrar={this.state.filtrados}/>
 
             </>
           
