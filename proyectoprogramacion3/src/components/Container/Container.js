@@ -42,14 +42,17 @@ componentDidUpdate(){
 }
       
       
-      
+// El metodo filtrarAlbums, el encargado de la logica detras de nuestro seacrh bar   
 filtrarAlbums(textoFiltrar){
+
           let albumsFiltrados = this.state.albums.filter(album => album.title.toLowerCase().includes(textoFiltrar.toLowerCase()));
-          // console.log(albumsFiltrados);
+          
           this.setState({
               filtrados: albumsFiltrados
           })
 }
+
+
 
  // creamos el metodo agregarCards
  agregarCards(){
