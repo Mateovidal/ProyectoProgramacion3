@@ -11,7 +11,8 @@ class Container extends Component {
         this.state = {
             albums: [],
             filtrados: [],
-            vista: 'row'
+            vista: 'row',
+            contador: 0
         }
     }
 
@@ -27,9 +28,10 @@ class Container extends Component {
                 this.setState({
                     albums: data.data,
                     filtrados: data.data,
-                    // nextUrl: "",
+                    contador: data.data[data.data.length-1].position,
                     vista: this.state.vista
-                })
+                });
+                
             })
             .catch(e => console.log(e))
     }
@@ -52,9 +54,9 @@ class Container extends Component {
     }
 
     agregarCards(){
-       
-        let newIndex = this.state.filtrados.length
-
+        // let newIndex = this.state.filtrados.length
+        console.error(this.state.contador);
+        let newIndex = this.state.contador
         const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=" + newIndex + "&limit=10";
         
         fetch(url)
@@ -64,8 +66,9 @@ class Container extends Component {
             this.setState({
 
                 filtrados: this.state.filtrados.concat(data.data),
-               
-            })
+                contador: this.state.contador + 12
+                
+            }); console.log(this.state.contador);
         })
         .catch(function(e){
             console.log(e);
