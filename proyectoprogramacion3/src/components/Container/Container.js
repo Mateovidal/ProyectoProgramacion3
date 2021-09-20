@@ -50,7 +50,7 @@ filtrarAlbums(textoFiltrar){
 
 
 
- // creamos el metodo agregarCards
+ //el metodo agregarCards
  agregarCards(){
     let newIndex = this.state.albums.length
     const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=10";
@@ -71,9 +71,7 @@ filtrarAlbums(textoFiltrar){
     )
 }
 
-// le pedimos que filtre no de albums, sino de filtrados
-//y luego mete las tarjetas que quedan (las que no fueron borradas) dentro de filtrados
-//filtrados es lo que se renderiza
+
 
 borrarTarjeta (id){
     console.log(id);
@@ -109,8 +107,16 @@ render(){
 
             <>
 
-            <Header orientarCardsColumn={()=> this.cambiarColumn()} orientarCardsRow={()=> this.cambiarRow()} filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
-            <Main orientacionAMostrar={this.state.vista} agregarTarjetas={()=>this.agregarCards()} borrarTarjeta={(albumBorrar)=>this.borrarTarjeta(albumBorrar)} albumsAMostrar={this.state.filtrados}/>
+            <Header 
+            orientarCardsColumn={()=> this.cambiarColumn()} 
+            orientarCardsRow={()=> this.cambiarRow()} 
+            filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
+
+            <Main 
+            orientacionAMostrar={this.state.vista} 
+            agregarTarjetas={()=>this.agregarCards()} 
+            borrarTarjeta={(albumBorrar)=>this.borrarTarjeta(albumBorrar)} 
+            albumsAMostrar={this.state.filtrados}/>
 
             </>
           

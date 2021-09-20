@@ -69,10 +69,19 @@ class Header extends Component {
 
         <div className= "search">
                 {/* no arreglamos lo que dijo sebas de que hay que pasarle el evento */}
-                <form onSubmit={(e) => this.enviarSubmit()} className='navbarForm'action="">
+                <form 
+                onSubmit={(e) => this.enviarSubmit(e)} 
+                className='navbarForm'
+                action="">
                     
-                <input className="searchTerm"type="text" name="search" id="" placeholder="Search" onChange={(e)=> this.controlCambios(e)} value={this.state.value} />
-                <button className="searchButton" type="submit" href="#"><img src='https://st2.depositphotos.com/4060975/8056/v/600/depositphotos_80565476-stock-illustration-magnifier-vector-icon.jpg' alt='' className="lupita"></img></button>
+                <input className="searchTerm" 
+                type="text" 
+                name="search" 
+                id="" 
+                placeholder="Search" 
+                onChange={(e)=> this.controlCambios(e)} 
+                value={this.state.value} />
+                {/* <button className="searchButton" type="submit" href="#"><img src='https://st2.depositphotos.com/4060975/8056/v/600/depositphotos_80565476-stock-illustration-magnifier-vector-icon.jpg' alt='' className="lupita"></img></button> */}
                
             </form>
         </div>
