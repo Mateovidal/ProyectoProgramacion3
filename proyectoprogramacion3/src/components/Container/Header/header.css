@@ -15,7 +15,11 @@
     font-size: xx-large;
 }
 
- .navbarSection{ 
+/* .navbarTitle:hover {
+
+} */
+
+.navbarSection{ 
 
     display: flex;
     flex-wrap: nowrap;
@@ -68,10 +72,7 @@
     text-align:center;
     transition: all 0.2s;
     background-color: #121313;
-    max-height: 40%;
-        
-       
-        
+    max-height: 40%; 
 }
 
 .ascending:hover{
@@ -96,9 +97,6 @@
     margin-right: 2%;
     margin-left: 0.5%;
     max-height: 40%;
-        
-       
-        
 }
 
 .descending:hover{
