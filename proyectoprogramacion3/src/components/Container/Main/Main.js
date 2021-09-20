@@ -32,6 +32,7 @@ class Main extends Component {
             {/* queremos que se mapee el filtrados para que muestre nada mas los que queremos y no todos */}
                   {this.props.albumsAMostrar.map((album) => (
                       <Card 
+                      
                       key={album.id} 
                       datosAlbum={album} 
                       borrar = {this.props.borrarTarjeta} />
