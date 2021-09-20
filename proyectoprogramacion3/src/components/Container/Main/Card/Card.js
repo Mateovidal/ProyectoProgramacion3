@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
 import './card.css'
 
-class Card extends Component{
+
+class Card extends Component {
+
     constructor(props){
         super(props);
+
         this.state = {
             viewMore: false,
             text:'Ver más',
-            selected: false,
-
+            // selected: false,
         }
     };
     
 
     viewMore(){
+
         if(this.state.viewMore){
+
             this.setState({
                 viewMore: false,
                 text: 'Ver más'
@@ -32,7 +36,8 @@ class Card extends Component{
   
     render () {
         console.log(this.props);
-         return(
+
+        return(
         <>
             <article className='card'>
 
@@ -43,7 +48,7 @@ class Card extends Component{
                     </div>
                     <button className="borrarCard" onClick={() => this.props.borrar(this.props.datosAlbum.id)}>Borrar</button>           
                     
-                     </section>
+                </section>
 
                 <main>
                     <img className='img' src={this.props.datosAlbum.cover_big} alt=""></img>
@@ -65,7 +70,7 @@ class Card extends Component{
 
             </article>
         </>
-         )
+        )
     };
 
 }

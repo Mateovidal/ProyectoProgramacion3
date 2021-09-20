@@ -15,50 +15,52 @@ class Container extends Component {
         }
     }
 
-componentDidMount(){
+    componentDidMount(){
         console.log('componentDidMount');
-        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=12";
-        // &top?limit=10
-        fetch(url)
-        .then((respuesta) => respuesta.json())
-        .then((data) => {
-            console.log(data);
-            this.setState({
-                albums: data.data,
-                filtrados: data.data,
-                nextUrl: "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=12",
-                vista: this.state.vista
+            const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=12";
+
+            fetch(url)
+            .then((respuesta) => respuesta.json())
+            .then((data) => {
+                console.log(data);
+
+                this.setState({
+                    albums: data.data,
+                    filtrados: data.data,
+                    // nextUrl: "",
+                    vista: this.state.vista
+                })
             })
-        })
-        .catch(e => console.log(e))
-}
+            .catch(e => console.log(e))
+    }
       
-componentDidUpdate(){
+    componentDidUpdate(){
         console.log('component did update');
-}
+    }
       
       
-// El metodo filtrarAlbums, el encargado de la logica detras de nuestro seacrh bar   
-filtrarAlbums(textoFiltrar){
+      
+    filtrarAlbums(textoFiltrar){
 
-          let albumsFiltrados = this.state.albums.filter(album => album.title.toLowerCase().includes(textoFiltrar.toLowerCase()));
-          
-          this.setState({
+        let albumsFiltrados = this.state.albums.filter(album => album.title.toLowerCase().includes(textoFiltrar.toLowerCase()));
+          // console.log(albumsFiltrados);
+            this.setState({
+
               filtrados: albumsFiltrados
-          })
-}
+            
+            })
+    }
 
+    agregarCards(){
+       
+        let newIndex = this.state.filtrados.length
 
-
- //el metodo agregarCards
- agregarCards(){
-    let newIndex = this.state.albums.length
-    const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index="+ newIndex +"&limit=10";
-     fetch(url)
+        const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=" + newIndex + "&limit=10";
+        
+        fetch(url)
         .then((response) => response.json())
         .then((data) => {
             // console.log(data);
-
             this.setState({
 
                 filtrados: this.state.filtrados.concat(data.data),
@@ -67,60 +69,54 @@ filtrarAlbums(textoFiltrar){
         })
         .catch(function(e){
             console.log(e);
-        }
-    )
-}
+        })
+    }
 
 
+    borrarTarjeta (id){
+        console.log(id);
 
-borrarTarjeta (id){
-    console.log(id);
-
-    const resto = this.state.filtrados.filter( album => album.id !== id)
+        const resto = this.state.filtrados.filter((album) => album.id !== id)
     
-    this.setState({
-        filtrados: resto
-    })
-}
+        this.setState({
+            filtrados: resto
+        })
+    }
 
 
-cambiarRow(){
+    cambiarRow(){
 
         this.setState({
             vista: 'row'
         })
-}
+    }
 
-cambiarColumn() {
+    cambiarColumn() {
 
-    this.setState({
-        vista: 'column'
-    })
-}
+        this.setState({
+            vista: 'column'
+        })
+    }
 
 
-render(){
-
-    console.log(this.state.vista)
-
+    render(){
         return (
 
             <>
 
             <Header 
+            filtrarAlbums={(param)=> this.filtrarAlbums(param)} 
             orientarCardsColumn={()=> this.cambiarColumn()} 
-            orientarCardsRow={()=> this.cambiarRow()} 
-            filtrarAlbums={(param)=> this.filtrarAlbums(param)}/> 
-
+            orientarCardsRow={()=> this.cambiarRow()} /> 
+            
             <Main 
             orientacionAMostrar={this.state.vista} 
             agregarTarjetas={()=>this.agregarCards()} 
             borrarTarjeta={(albumBorrar)=>this.borrarTarjeta(albumBorrar)} 
-            albumsAMostrar={this.state.filtrados}/>
-
+            albumsAMostrar={this.state.filtrados} />
+            
             </>
-          
-        
+
         )
     }
     
