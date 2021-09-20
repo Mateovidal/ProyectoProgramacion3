@@ -1,9 +1,10 @@
 .footer {
     display: flex;
     justify-content: flex-end;
-    background-color: #121313;
-    color: rgb(225, 0, 255);
+    background-color: #1f1f1f;
+    color: #a50069;
     font-family: Arial;
+    border-radius: 0.5em;
 }
 
 .team {
