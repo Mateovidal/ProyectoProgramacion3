@@ -7,7 +7,7 @@ class Main extends Component {
     constructor(props){
         super(props);
         this.state = {
-            loading: true
+        
         }
     }
     
@@ -15,14 +15,14 @@ class Main extends Component {
        
         let contenido;
 
-        if (this.props.albumsAMostrar == "") {
-            contenido = <iframe src="https://giphy.com/embed/3AMRa6DRUhMli" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
-            console.log("LOADING...");
+        if (this.props.resultadosSearch === false) {
+            contenido = <p className='noResultados'> NO HAY RESULTADOS PARA SU BUSQUEDA </p>
+            console.log("NO HAY RESULTADOS");
         }
 
-        else if (this.props.albumsAMostrar === "") {
-            contenido = <p className='noResultados'> NO HAY RESULTADOS PA </p>
-            console.log("NO HAY RESULTADOS");
+        else if (this.props.cargando === true) {
+            contenido = <iframe src="https://giphy.com/embed/3AMRa6DRUhMli" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+            console.log("LOADING...");
         }
 
         else {

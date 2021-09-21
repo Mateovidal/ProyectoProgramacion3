@@ -11,6 +11,8 @@ class Container extends Component {
         this.state = {
             albums: [],
             filtrados: [],
+            resultadosSearch: true,
+            cargando: true,
             vista: 'row',
             contador: 0
         }
@@ -18,21 +20,34 @@ class Container extends Component {
 
     componentDidMount(){
         console.log('componentDidMount');
-            const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=12";
 
+        
+            const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=12";
+          
             fetch(url)
             .then((respuesta) => respuesta.json())
+            
+           
             .then((data) => {
                 console.log(data);
 
-                this.setState({
-                    albums: data.data,
-                    filtrados: data.data,
-                    contador: data.data[data.data.length-1].position,
-                    vista: this.state.vista
-                });
-                
+
+
+    this.setState({
+        albums: data.data,
+        filtrados: data.data,
+        contador: data.data[data.data.length-1].position,
+        cargando: false,
+        vista: this.state.vista
+    })
+    
+  
+    ;
+
+               
+       console.log(this.state.cargando);
             })
+            
             .catch(e => console.log(e))
     }
       
@@ -43,14 +58,26 @@ class Container extends Component {
       
       
     filtrarAlbums(textoFiltrar){
-
+        
         let albumsFiltrados = this.state.albums.filter(album => album.title.toLowerCase().includes(textoFiltrar.toLowerCase()));
-          // console.log(albumsFiltrados);
+        
+        if (albumsFiltrados.length !== 0) {
             this.setState({
-
-              filtrados: albumsFiltrados
-            
+                
+                filtrados: albumsFiltrados,
+                
+                resultadosSearch: true,
+    
+              })  
+        }
+        else {
+            this.setState({
+                resultadosSearch:false  
             })
+            
+        }
+
+            
     }
 
     agregarCards(){
@@ -65,7 +92,9 @@ class Container extends Component {
             // console.log(data);
             this.setState({
 
+                albums: this.state.filtrados.concat(data.data),
                 filtrados: this.state.filtrados.concat(data.data),
+               
                 contador: this.state.contador + 12
                 
             }); console.log(this.state.contador);
@@ -82,6 +111,7 @@ class Container extends Component {
         const resto = this.state.filtrados.filter((album) => album.id !== id)
     
         this.setState({
+            albums: resto,
             filtrados: resto
         })
     }
@@ -103,6 +133,9 @@ class Container extends Component {
 
 
     render(){
+
+       
+        
         return (
 
             <>
@@ -116,7 +149,10 @@ class Container extends Component {
             orientacionAMostrar={this.state.vista} 
             agregarTarjetas={()=>this.agregarCards()} 
             borrarTarjeta={(albumBorrar)=>this.borrarTarjeta(albumBorrar)} 
-            albumsAMostrar={this.state.filtrados} />
+            resultadosSearch={this.state.resultadosSearch}
+            albumsAMostrar={this.state.filtrados}
+            cargando={this.state.cargando} />
+    
             
             </>
 
