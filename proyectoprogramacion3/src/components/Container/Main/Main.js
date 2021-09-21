@@ -15,7 +15,7 @@ class Main extends Component {
        
         let contenido;
 
-        if (this.props.resultadosSearch === false && this.props.albumsAMostrar == "") {
+        if (this.props.resultadosSearch === false || this.props.albumsAMostrar == "") {
             contenido = <p className='noResultados'> NO HAY RESULTADOS PARA SU BUSQUEDA </p>
             console.log("NO HAY RESULTADOS");
         }
